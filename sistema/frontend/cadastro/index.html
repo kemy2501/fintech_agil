@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>FinTech Ágil - O Futuro Financeiro do Seu Negócio</title>
+</head>
+<body>
+    <div class="title">
+        <label for="">Fintech Ágil</label>
+    </div>
+    <div class="container">
+        
+
+        <label for="nome_completo">Nome completo</label>
+        <input type="text" id="nome_completo" minlength="2">
+        <br>
+        <br>
+
+        <label for="dt_nasc">Data de nascimento</label>
+        <input type="date" id="dt_nasc" minlength="2">
+        <br>
+        <br>
+
+        <label for="cpf">CPF</label>
+        <input type="text" id="cpf" minlength="2">
+        <br>
+        <br>
+
+        <label for="telefone">Telefone</label>
+        <input type="text" id="telefone" minlength="2">
+        <br>
+        <br>
+
+        <label for="email">Email</label>
+        <input type="text" id="email" minlength="2">
+        <br>
+        <br> 
+
+        <label for="endereco">Endereço</label>
+        <input type="text" id="endereco" minlength="2">
+        <br>
+        <br>
+
+        <label for="senha">Senha</label>
+        <input type="text" id="senha" minlength="2">
+        <br>
+        <br>
+
+        <button id="btn_cadastrar">Cadastrar</button>
+        <p id="resultado">Bem-vindo a Fintech Ágil</p>
+    </div>
+</body>
+<script>
+    //Criar um eveno para quando clicar no botão 
+    document.getElementById("btn_cadastrar").addEventListener("click",async ()=>{
+        // primeira etapa - pegar as informações dos inputs
+        const nome_completo = document.getElementById("nome_completo").value
+        const dt_nasc = document.getElementById("dt_nasc").value
+        const cpf = document.getElementById("cpf").value
+        const telefone = document.getElementById("telefone").value
+        const email = document.getElementById("email").value
+        const endereco = document.getElementById("endereco").value
+        const senha = document.getElementById("senha").value
+
+
+        // segunda etapa - fazer a requisição para o back-end
+        const resposta = await fetch(`http://localhost:3000/cadastro`,{
+            method:"POST",
+            headers:{
+                "Accept":"application/json",
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({"nome_completo":nome_completo, "dt_nasc":dt_nasc, "cpf":cpf, "telefone":telefone, "email":email, "endereco":endereco, "senha":senha})
+        })
+
+        //terceira etapa - pegar a resposta do back-end
+
+        if(resposta.ok == true){
+            const dados = await resposta.json()
+            document.getElementById("resultado").innerText = dados.resposta
+        }else{
+
+        }
+    })
+</script>
+
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>FinTech Ágil - O Futuro Financeiro do Seu Negócio</title>
+</head>
+<body>
+    <div class="title">
+        <label for="">Fintech Ágil</label>
+    </div>
+    <div class="container">
+        
+
+        <label for="nome_completo">Nome completo</label>
+        <input type="text" id="nome_completo" minlength="2">
+        <br>
+        <br>
+
+        <label for="dt_nasc">Data de nascimento</label>
+        <input type="date" id="dt_nasc" minlength="2">
+        <br>
+        <br>
+
+        <label for="cpf">CPF</label>
+        <input type="text" id="cpf" minlength="2">
+        <br>
+        <br>
+
+        <label for="telefone">Telefone</label>
+        <input type="text" id="telefone" minlength="2">
+        <br>
+        <br>
+
+        <label for="email">Email</label>
+        <input type="text" id="email" minlength="2">
+        <br>
+        <br> 
+
+        <label for="endereco">Endereço</label>
+        <input type="text" id="endereco" minlength="2">
+        <br>
+        <br>
+
+        <label for="senha">Senha</label>
+        <input type="text" id="senha" minlength="2">
+        <br>
+        <br>
+
+        <button id="btn_cadastrar">Cadastrar</button>
+        <p id="resultado">Bem-vindo a Fintech Ágil</p>
+    </div>
+</body>
+<script>
+    //Criar um eveno para quando clicar no botão 
+    document.getElementById("btn_cadastrar").addEventListener("click",async ()=>{
+        // primeira etapa - pegar as informações dos inputs
+        const nome_completo = document.getElementById("nome_completo").value
+        const dt_nasc = document.getElementById("dt_nasc").value
+        const cpf = document.getElementById("cpf").value
+        const telefone = document.getElementById("telefone").value
+        const email = document.getElementById("email").value
+        const endereco = document.getElementById("endereco").value
+        const senha = document.getElementById("senha").value
+
+
+        // segunda etapa - fazer a requisição para o back-end
+        const resposta = await fetch(`http://localhost:3000/cadastro`,{
+            method:"POST",
+            headers:{
+                "Accept":"application/json",
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({"nome_completo":nome_completo, "dt_nasc":dt_nasc, "cpf":cpf, "telefone":telefone, "email":email, "endereco":endereco, "senha":senha})
+        })
+
+        //terceira etapa - pegar a resposta do back-end
+
+        if(resposta.ok == true){
+            const dados = await resposta.json()
+            document.getElementById("resultado").innerText = dados.resposta
+        }else{
+
+        }
+    })
+</script>
+
+</html>
