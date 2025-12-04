@@ -1,0 +1,147 @@
+/* Reset Básico e Fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Variáveis CSS (Cores da Marca) - Ajuste de tons para mais sobriedade */
+:root {
+    --primary-red: #d00000; 
+    --accent-red: #E44D4D; 
+    --card-background: #FFFFFF; /* Fundo do card puramente branco (Limpeza) */
+    --text-dark: #333;
+    --text-muted: #6c757d; /* Cinza para textos secundários */
+}
+
+body {
+    background-color: var(--primary-red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Estilo do Card Principal: Mais limpo e focado */
+.cta-card {
+    background-color: var(--card-background);
+    padding: 45px 35px;
+    border-radius: 12px; /* Menos arredondado para ser mais formal */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra suave */
+    width: 100%;
+    text-align: center;
+}
+
+.brand-title {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--primary-red);
+    margin-bottom: 0.2em;
+}
+
+.subtitle {
+    font-size: 0.95em;
+    color: var(--text-muted);
+    margin-bottom: 35px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Agrupamento dos botões principais */
+.cta-buttons-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; 
+    margin-bottom: 30px;
+}
+
+/* Estilo Base dos Botões */
+.btn {
+    text-decoration: none;
+    font-size: 0.95em;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    display: block; 
+    text-transform: uppercase;
+}
+
+/* Botão de Cadastro (Primary) - Vermelho forte para CTA principal */
+.btn-primary {
+    background-color: var(--primary-red);
+    color: white;
+    border: 1px solid var(--primary-red);
+    box-shadow: 0 4px 10px rgba(184, 47, 45, 0.4); /* Sombra sutil de destaque */
+}
+
+.btn-primary:hover {
+    background-color: #992422; /* Tom um pouco mais escuro */
+    border-color: #992422;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(184, 47, 45, 0.5);
+}
+
+/* Botão de Login (Secondary) - Estilo vazado elegante */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-red);
+    border: 1px solid #dee2e6; /* Borda cinza clara para sutileza */
+}
+
+.btn-secondary:hover {
+    background-color: #f8f9fa; /* Fundo muito levemente cinza no hover */
+    border-color: var(--primary-red);
+    color: var(--primary-red);
+}
+
+/* Seção Fale Conosco */
+.contact-area {
+    border-top: 1px solid #e9ecef; /* Linha divisória fina */
+    padding-top: 25px;
+    margin-top: 25px;
+}
+
+.contact-area p {
+    font-size: 0.9em;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+/* Botão Fale Conosco (Tertiary) - Cor neutra para suporte */
+.btn-tertiary {
+    background-color: var(--text-muted);
+    color: white;
+    border: 1px solid var(--text-muted);
+    padding: 12px 20px; /* Um pouco menor */
+}
+
+.btn-tertiary:hover {
+    background-color: #5a6268;
+    border-color: #5a6268;
+    transform: translateY(-1px);
+}
+
+.footer-note {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.75em;
+    color: #adb5bd; /* Cinza bem claro para nota de rodapé */
+    font-weight: 300;
+}
+
+/* Responsividade básica */
+@media (max-width: 480px) {
+    .cta-card {
+        padding: 35px 25px;
+    }
+}
